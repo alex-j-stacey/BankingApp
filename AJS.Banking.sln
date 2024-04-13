@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AJS.Banking.UI", "AJS.Banking.UI\AJS.Banking.UI.csproj", "{B85ED403-FB59-4702-AD60-F744E91C997F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJS.Banking.BL", "AJS.Banking.BL\AJS.Banking.BL.csproj", "{65385AE1-4A1B-48A4-803D-A2937128395C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B85ED403-FB59-4702-AD60-F744E91C997F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B85ED403-FB59-4702-AD60-F744E91C997F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B85ED403-FB59-4702-AD60-F744E91C997F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B85ED403-FB59-4702-AD60-F744E91C997F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65385AE1-4A1B-48A4-803D-A2937128395C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65385AE1-4A1B-48A4-803D-A2937128395C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65385AE1-4A1B-48A4-803D-A2937128395C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65385AE1-4A1B-48A4-803D-A2937128395C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CB18690-C54A-4A8E-9764-9DAC80496F1E}
+	EndGlobalSection
+EndGlobal
