@@ -202,6 +202,7 @@
             this.btnNew.TabIndex = 6;
             this.btnNew.Text = "&New";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnUpdate
             // 
@@ -270,6 +271,7 @@
             this.Controls.Add(this.lstbxCustomers);
             this.Name = "Form1";
             this.Text = "Banking";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeposits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWithdrawals)).EndInit();
             this.ResumeLayout(false);

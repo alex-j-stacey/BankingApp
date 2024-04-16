@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace AJS.Banking.BL
 {
     public class CustomerCollection : List<Customer>
     {
+
         
         // junk data for testing
         public void Populate()
@@ -30,18 +32,18 @@ namespace AJS.Banking.BL
             Add(customer);
 
             Customer customer2 = new Customer();
-            customer2.CustomerID = 2;
-            customer2.SSN = "345-76-9846";
-            customer2.FirstName = "Jack";
-            customer2.LastName = "Doe";
-            customer2.BirthDate = new DateTime(2005, 6, 12);
-            customer2.DepositList.Add(new Deposit(1, 400, new DateTime(2000, 5, 12)));
-            customer2.DepositList.Add(new Deposit(2, 500, new DateTime(2000, 5, 13)));
-            customer2.DepositList.Add(new Deposit(3, 600, new DateTime(2000, 5, 14)));
-            customer2.WithdrawalList.Add(new Withdrawal(1, 100, new DateTime(2000, 5, 15)));
-            customer2.WithdrawalList.Add(new Withdrawal(2, 150, new DateTime(2000, 5, 16)));
-            customer2.WithdrawalList.Add(new Withdrawal(3, 125, new DateTime(2000, 5, 17)));
-            Add(customer2);
+             customer2.CustomerID = 2;
+             customer2.SSN = "345-76-9846";
+             customer2.FirstName = "Jack";
+             customer2.LastName = "Doe";
+             customer2.BirthDate = new DateTime(2005, 6, 12);
+             customer2.DepositList.Add(new Deposit(1, 400, new DateTime(2000, 5, 12)));
+             customer2.DepositList.Add(new Deposit(2, 500, new DateTime(2000, 5, 13)));
+             customer2.DepositList.Add(new Deposit(3, 600, new DateTime(2000, 5, 14)));
+             customer2.WithdrawalList.Add(new Withdrawal(1, 100, new DateTime(2000, 5, 15)));
+             customer2.WithdrawalList.Add(new Withdrawal(2, 150, new DateTime(2000, 5, 16)));
+             customer2.WithdrawalList.Add(new Withdrawal(3, 125, new DateTime(2000, 5, 17)));
+             Add(customer2);
 
             Customer customer3 = new Customer();
             customer3.CustomerID = 3;
@@ -58,6 +60,16 @@ namespace AJS.Banking.BL
             Add(customer3);
 
 
+        }
+
+        public int GetNextID(int id)
+        {
+            foreach (Customer customer in this)
+            {
+                if (customer.CustomerID != id) { return id; }
+                else { id++; GetNextID(id); }
+            }
+            return id;
         }
     }
 }

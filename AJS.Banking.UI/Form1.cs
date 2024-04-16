@@ -1,4 +1,6 @@
 using AJS.Banking.BL;
+using AJS.Banking.PL;
+
 
 namespace AJS.Banking.UI
 {
@@ -41,8 +43,38 @@ namespace AJS.Banking.UI
                 dgvDeposits.Columns["Amount"].DefaultCellStyle.Format = "c";
                 dgvWithdrawals.DataSource = customer.WithdrawalList;
                 dgvWithdrawals.Columns["Amount"].DefaultCellStyle.Format = "c";
+                
 
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            lblDisplayedID.Text = customers.GetNextID(1).ToString();
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtSSN.Text = "";
+            txtDOB.Text = "";
+            lblDisplayedAge.Text = "";
+            lstbxCustomers.SelectedItem = null;
+            dgvDeposits.DataSource = null;
+            dgvWithdrawals.DataSource= null;
+            
+
+
+            //customer.FirstName = txtFirstName.Text.Trim();
+            //customer.LastName = txtLastName.Text.Trim();
+            //customer.SSN= txtSSN.Text.Trim();
+            //customer.BirthDate = DateTime.Parse(txtDOB.Text.Trim());
+
+            //customers.Add(customer);
+            //lstbxCustomers.DataSource = null;
+            //lstbxCustomers.DataSource = customers;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DataAccess.SaveToXML(typeof(CustomerCollection), customers);
         }
     }
 }

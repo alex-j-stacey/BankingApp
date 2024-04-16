@@ -9,8 +9,8 @@ namespace AJS.Banking.BL
     public class Customer : Person
     {
         public int CustomerID { get; set; }
-        public Deposit LastDeposit { get; set; }
-        public Withdrawal LastWithdrawal { get; set; }
+        public Deposit? LastDeposit { get; set; }
+        public Withdrawal? LastWithdrawal { get; set; }
         public List<Deposit> DepositList { get;set; } = new List<Deposit>();
         public List<Withdrawal> WithdrawalList { get;set;} = new List<Withdrawal>();
     }
