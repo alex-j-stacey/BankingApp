@@ -43,6 +43,11 @@
             this.dgvWithdrawals = new System.Windows.Forms.DataGridView();
             this.lblDisplayedID = new System.Windows.Forms.Label();
             this.lblDisplayedAge = new System.Windows.Forms.Label();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.lblDeposits = new System.Windows.Forms.Label();
+            this.lblWithdrawals = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeposits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWithdrawals)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +59,7 @@
             this.lstbxCustomers.ItemHeight = 21;
             this.lstbxCustomers.Location = new System.Drawing.Point(22, 22);
             this.lstbxCustomers.Name = "lstbxCustomers";
-            this.lstbxCustomers.Size = new System.Drawing.Size(294, 256);
+            this.lstbxCustomers.Size = new System.Drawing.Size(294, 277);
             this.lstbxCustomers.TabIndex = 0;
             this.lstbxCustomers.SelectedIndexChanged += new System.EventHandler(this.lstbxCustomers_SelectedIndexChanged);
             // 
@@ -153,19 +158,19 @@
             // dgvDeposits
             // 
             this.dgvDeposits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeposits.Location = new System.Drawing.Point(22, 321);
+            this.dgvDeposits.Location = new System.Drawing.Point(22, 357);
             this.dgvDeposits.Name = "dgvDeposits";
             this.dgvDeposits.RowTemplate.Height = 25;
-            this.dgvDeposits.Size = new System.Drawing.Size(659, 150);
+            this.dgvDeposits.Size = new System.Drawing.Size(659, 122);
             this.dgvDeposits.TabIndex = 3;
             // 
             // dgvWithdrawals
             // 
             this.dgvWithdrawals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWithdrawals.Location = new System.Drawing.Point(22, 491);
+            this.dgvWithdrawals.Location = new System.Drawing.Point(22, 524);
             this.dgvWithdrawals.Name = "dgvWithdrawals";
             this.dgvWithdrawals.RowTemplate.Height = 25;
-            this.dgvWithdrawals.Size = new System.Drawing.Size(659, 150);
+            this.dgvWithdrawals.Size = new System.Drawing.Size(659, 117);
             this.dgvWithdrawals.TabIndex = 4;
             // 
             // lblDisplayedID
@@ -188,11 +193,66 @@
             this.lblDisplayedAge.TabIndex = 5;
             this.lblDisplayedAge.Text = "Age";
             // 
+            // btnNew
+            // 
+            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNew.Location = new System.Drawing.Point(346, 255);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(98, 47);
+            this.btnNew.TabIndex = 6;
+            this.btnNew.Text = "&New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.Location = new System.Drawing.Point(463, 255);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(98, 47);
+            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.Location = new System.Drawing.Point(583, 255);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(98, 47);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "&Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // lblDeposits
+            // 
+            this.lblDeposits.AutoSize = true;
+            this.lblDeposits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDeposits.Location = new System.Drawing.Point(39, 325);
+            this.lblDeposits.Name = "lblDeposits";
+            this.lblDeposits.Size = new System.Drawing.Size(73, 21);
+            this.lblDeposits.TabIndex = 7;
+            this.lblDeposits.Text = "Deposits:";
+            // 
+            // lblWithdrawals
+            // 
+            this.lblWithdrawals.AutoSize = true;
+            this.lblWithdrawals.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblWithdrawals.Location = new System.Drawing.Point(39, 491);
+            this.lblWithdrawals.Name = "lblWithdrawals";
+            this.lblWithdrawals.Size = new System.Drawing.Size(100, 21);
+            this.lblWithdrawals.TabIndex = 7;
+            this.lblWithdrawals.Text = "Withdrawals:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 660);
+            this.Controls.Add(this.lblWithdrawals);
+            this.Controls.Add(this.lblDeposits);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.lblDisplayedAge);
             this.Controls.Add(this.lblDisplayedID);
             this.Controls.Add(this.dgvWithdrawals);
@@ -234,5 +294,10 @@
         private DataGridView dgvWithdrawals;
         private Label lblDisplayedID;
         private Label lblDisplayedAge;
+        private Button btnNew;
+        private Button btnUpdate;
+        private Button btnDelete;
+        private Label lblDeposits;
+        private Label lblWithdrawals;
     }
 }
