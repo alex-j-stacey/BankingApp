@@ -75,12 +75,6 @@ namespace AJS.Banking.UI
             dgvWithdrawals.DataSource= null;
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // saves CustomerCollection to xml at filepath
-            DataAccess.SaveToXML(typeof(CustomerCollection), customers);
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // whether or not the form data deals with existing customer in CustomerCollection
@@ -147,6 +141,33 @@ namespace AJS.Banking.UI
                     lblDisplayedAge.Text = "";
                 }
             }
+        }
+
+        private void btnSaveXML_Click(object sender, EventArgs e)
+        {
+            DataAccess.SaveToXML(typeof(CustomerCollection), customers);
+        }
+
+        private void btnLoadXML_Click(object sender, EventArgs e)
+        {
+            // loads xml from specified filepath in CustomerCollection
+            try
+            {
+                customers = (DataAccess.LoadFromXML(typeof(CustomerCollection))
+                    as CustomerCollection)!;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error loading the customers.xml: " + ex.Message);
+            }
+            lstbxCustomers.DataSource = null;
+            lstbxCustomers.DataSource = customers;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DataAccess.SaveToXML(typeof(CustomerCollection), customers);
+
         }
     }
 }

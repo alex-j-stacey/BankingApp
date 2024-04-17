@@ -32,8 +32,6 @@ namespace AJS.Banking.BL
             customer.WithdrawalList.Add(new Withdrawal(1, 100, new DateTime(2000, 2, 5)));
             customer.WithdrawalList.Add(new Withdrawal(2, 50, new DateTime(2000, 2, 6)));
             customer.WithdrawalList.Add(new Withdrawal(3, 25, new DateTime(2000, 2, 7)));
-
-
             Add(customer);
 
             Customer customer2 = new Customer();
