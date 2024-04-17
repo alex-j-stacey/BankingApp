@@ -60,7 +60,7 @@
             this.lstbxCustomers.Location = new System.Drawing.Point(22, 22);
             this.lstbxCustomers.Name = "lstbxCustomers";
             this.lstbxCustomers.Size = new System.Drawing.Size(294, 277);
-            this.lstbxCustomers.TabIndex = 0;
+            this.lstbxCustomers.TabIndex = 7;
             this.lstbxCustomers.SelectedIndexChanged += new System.EventHandler(this.lstbxCustomers_SelectedIndexChanged);
             // 
             // lblID
@@ -129,7 +129,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(472, 56);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(209, 29);
-            this.txtFirstName.TabIndex = 2;
+            this.txtFirstName.TabIndex = 0;
             // 
             // txtLastName
             // 
@@ -137,7 +137,7 @@
             this.txtLastName.Location = new System.Drawing.Point(472, 95);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(209, 29);
-            this.txtLastName.TabIndex = 2;
+            this.txtLastName.TabIndex = 1;
             // 
             // txtSSN
             // 
@@ -153,7 +153,7 @@
             this.txtDOB.Location = new System.Drawing.Point(472, 175);
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Size = new System.Drawing.Size(209, 29);
-            this.txtDOB.TabIndex = 2;
+            this.txtDOB.TabIndex = 3;
             // 
             // dgvDeposits
             // 
@@ -163,6 +163,7 @@
             this.dgvDeposits.RowTemplate.Height = 25;
             this.dgvDeposits.Size = new System.Drawing.Size(659, 122);
             this.dgvDeposits.TabIndex = 3;
+            this.dgvDeposits.TabStop = false;
             // 
             // dgvWithdrawals
             // 
@@ -172,6 +173,7 @@
             this.dgvWithdrawals.RowTemplate.Height = 25;
             this.dgvWithdrawals.Size = new System.Drawing.Size(659, 117);
             this.dgvWithdrawals.TabIndex = 4;
+            this.dgvWithdrawals.TabStop = false;
             // 
             // lblDisplayedID
             // 
@@ -199,7 +201,7 @@
             this.btnNew.Location = new System.Drawing.Point(346, 255);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(98, 47);
-            this.btnNew.TabIndex = 6;
+            this.btnNew.TabIndex = 4;
             this.btnNew.Text = "&New";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -210,9 +212,10 @@
             this.btnUpdate.Location = new System.Drawing.Point(463, 255);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(98, 47);
-            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "&Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -223,6 +226,7 @@
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblDeposits
             // 

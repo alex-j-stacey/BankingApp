@@ -18,6 +18,8 @@ namespace AJS.Banking.BL
             this.Amount = Amount;
             this.Date = Date;
         }
+
+        public Withdrawal() { }
     }
     
     

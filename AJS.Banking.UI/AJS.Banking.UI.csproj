@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AJS.Banking.BL\AJS.Banking.BL.csproj" />
+	<ProjectReference Include="..\AJS.Banking.PL\AJS.Banking.PL.csproj" />
   </ItemGroup>
 
 </Project>

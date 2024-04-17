@@ -4,15 +4,20 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AJS.Banking.PL;
 
 
 namespace AJS.Banking.BL
 {
     public class CustomerCollection : List<Customer>
     {
+        public CustomerCollection()
+        {
+            DataAccess.XMLFilePath = "customers.xml";
 
-        
-        // junk data for testing
+        }
+
+        // junk data for testing, loaded in if there is no existing xml
         public void Populate()
         {
             Customer customer = new Customer();
@@ -62,6 +67,7 @@ namespace AJS.Banking.BL
 
         }
 
+        // recursively iterates through customers to see what the lowest possible available id is
         public int GetNextID(int id)
         {
             foreach (Customer customer in this)

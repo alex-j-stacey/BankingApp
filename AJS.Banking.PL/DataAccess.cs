@@ -36,5 +36,5 @@ namespace AJS.Banking.PL
                 return obj;
             }
         }
-
     }
+}
