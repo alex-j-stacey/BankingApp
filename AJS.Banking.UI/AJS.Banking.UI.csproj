@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AJS.Banking.BL\AJS.Banking.BL.csproj" />
 	<ProjectReference Include="..\AJS.Banking.PL\AJS.Banking.PL.csproj" />
   </ItemGroup>

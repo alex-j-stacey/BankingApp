@@ -18,8 +18,12 @@ namespace AJS.Banking.UI
             // loads xml from specified filepath in CustomerCollection
             try
             {
-                customers = (DataAccess.LoadFromXML(typeof(CustomerCollection))
-                    as CustomerCollection)!;
+                //customers = (DataAccess.LoadFromXML(typeof(CustomerCollection))
+                    //as CustomerCollection)!;
+                customers.LoadFromDB();
+                lstbxCustomers.DataSource = customers;
+
+
             }
             catch (Exception ex)
             {

@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AJS.Banking.PL;
+using System.Data;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace AJS.Banking.BL
@@ -14,6 +17,7 @@ namespace AJS.Banking.BL
         public CustomerCollection()
         {
             DataAccess.XMLFilePath = "customers.xml";
+            DataAccess.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Banking;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         }
 
@@ -74,6 +78,15 @@ namespace AJS.Banking.BL
                 else { id++; GetNextID(id); }
             }
             return id;
+        }
+
+        public void LoadFromDB()
+        {
+            DataTable table = DataAccess.Select("select * from tblCustomers");
+            foreach (DataRow row in table.Rows)
+            {
+                Add(new Customer(row));
+            }
         }
     }
 }
