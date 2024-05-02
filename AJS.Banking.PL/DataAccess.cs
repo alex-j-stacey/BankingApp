@@ -77,21 +77,45 @@ namespace AJS.Banking.PL
             return dataTable;
         }
 
-        public static int RunSql(string sql)
+        public static int RunSql(string sql, List<SqlParameter>? parameters = null)
         {
             Connect();
 
             SqlCommand command = new SqlCommand(sql, connection);
 
-            if (sql != null)
+            if (parameters != null)
             {
-                command.Parameters.AddRange(sql.ToArray());
+                command.Parameters.AddRange(parameters.ToArray());
             }
 
-            int id = Convert.ToInt32(command.ExecuteScalar());
+            try
+            {
+                int id = Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch (Exception ex) { }
+            CloseConnection();
+            return 1;
+        }
+
+
+        public static DataTable RunSelect(string sql, List<SqlParameter>? parameters)
+        {
+            Connect();
+
+            SqlCommand command = new SqlCommand(sql, connection);
+
+            if (parameters != null)
+            {
+                command.Parameters.AddRange(parameters.ToArray());
+            }
+
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(dataTable);
 
             CloseConnection();
-            return id;
+
+            return dataTable;
         }
 
         public static void CloseConnection()

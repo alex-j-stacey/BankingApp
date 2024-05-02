@@ -56,8 +56,10 @@ namespace AJS.Banking.UI
                 lblDisplayedID.Text = customer.CustomerID.ToString();
                 lblDisplayedAge.Text = customer.Age.ToString();
 
+                customer.LoadDepositsFromDB();
                 dgvDeposits.DataSource = customer.DepositList;
                 dgvDeposits.Columns["Amount"].DefaultCellStyle.Format = "c";
+                customer.LoadWithdrawalsFromDB();
                 dgvWithdrawals.DataSource = customer.WithdrawalList;
                 dgvWithdrawals.Columns["Amount"].DefaultCellStyle.Format = "c";
                 
@@ -81,6 +83,39 @@ namespace AJS.Banking.UI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
+            if (lstbxCustomers.SelectedItem == null)
+            {
+                // creates new customer to be inserted into DB
+                Customer? customer = new Customer();
+                customer.CustomerID = Convert.ToInt32(lblDisplayedID.Text);
+                customer.FirstName = txtFirstName.Text;
+                customer.LastName = txtLastName.Text;
+                customer.SSN = txtSSN.Text;
+                customer.BirthDate = Convert.ToDateTime(txtDOB.Text);
+                customer.InsertIntoDB();
+                lstbxCustomers.DataSource = null;
+                customers.Clear();
+                customers.LoadFromDB();
+                lstbxCustomers.DataSource = customers;
+            }
+            else
+            {
+                Customer? customer = lstbxCustomers.SelectedItem as Customer;
+                customer.CustomerID = Convert.ToInt32(lblDisplayedID.Text);
+                customer.FirstName = txtFirstName.Text;
+                customer.LastName = txtLastName.Text;
+                customer.SSN = txtSSN.Text;
+                customer.BirthDate = Convert.ToDateTime(txtDOB.Text);
+                customer.UpdateDB();
+                lstbxCustomers.DataSource = null;
+                customers.Clear();
+                customers.LoadFromDB();
+                lstbxCustomers.DataSource = customers;
+            }
+
+
+            /* OLD METHOD
             // whether or not the form data deals with existing customer in CustomerCollection
             bool isMatchingID = false;
 
@@ -118,6 +153,7 @@ namespace AJS.Banking.UI
                     lstbxCustomers.DataSource = customers;
                 }
             } catch { }
+            */
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -128,7 +164,26 @@ namespace AJS.Banking.UI
             // deletes customer and resets form fields
             if (MessageBox.Show("Are you sure?", "Delete Customer", btns) == yes)
             {
-                Customer? customer = lstbxCustomers.SelectedItem as Customer;
+                try
+                {
+                    Customer? customer = lstbxCustomers.SelectedItem as Customer;
+                    customer.CustomerID = Convert.ToInt32(lblDisplayedID.Text);
+                    customer.FirstName = txtFirstName.Text;
+                    customer.LastName = txtLastName.Text;
+                    customer.SSN = txtSSN.Text;
+                    customer.BirthDate = Convert.ToDateTime(txtDOB.Text);
+                    customer.DeleteFromDB();
+                    lstbxCustomers.DataSource = null;
+                    customers.Clear();
+                    customers.LoadFromDB();
+                    lstbxCustomers.DataSource = customers;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("You just select a customer to delete them: ");
+                }
+
+                /* OLD METHOD
                 if (customer != null)
                 {
                     customers.Remove(customer);
@@ -144,6 +199,7 @@ namespace AJS.Banking.UI
                     txtDOB.Text = "";
                     lblDisplayedAge.Text = "";
                 }
+                */
             }
         }
 
