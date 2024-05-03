@@ -41,8 +41,10 @@ namespace AJS.Banking.BL
 
         public void DeleteFromDB()
         {
-            string sql = "DELETE FROM tblCustomers WHERE CustomerID = @id";
-            DataAccess.RunSql(sql, GetSqlParameters());
+            string customersql = "DELETE FROM tblCustomers WHERE CustomerID = @id";
+            DataAccess.RunSql(customersql, GetSqlParameters());
+            string transactionsql = "DELETE FROM tblTransactions WHERE CustomerID = @id";
+            DataAccess.RunSql(transactionsql, GetSqlParameters());
         }
 
         public List<SqlParameter> GetSqlParameters()
@@ -57,6 +59,7 @@ namespace AJS.Banking.BL
             return parameters;
         }
 
+        // adds to depositlist transactions from transactions DB where amount is greater than 0
         public void LoadDepositsFromDB()
         {
             string sql = "SELECT * FROM tblTransactions WHERE CustomerID = @id AND TransactionAmount > 0";
@@ -69,6 +72,7 @@ namespace AJS.Banking.BL
             }
         }
 
+        // adds to depositlist transactions from transactions DB where amount is less than 0
         public void LoadWithdrawalsFromDB()
         {
             string sql = "SELECT * FROM tblTransactions WHERE CustomerID = @id AND TransactionAmount < 0";

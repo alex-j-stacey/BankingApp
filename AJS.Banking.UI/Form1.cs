@@ -12,10 +12,13 @@ namespace AJS.Banking.UI
         public Form1()
         {
             InitializeComponent();
+
+            // OLD METHOD
             // fills CustomerCollection with data from the CustomerCollection class
             // customers.Populate();
-
             // loads xml from specified filepath in CustomerCollection
+
+            // loads customer data from Customer DB
             try
             {
                 //customers = (DataAccess.LoadFromXML(typeof(CustomerCollection))
@@ -27,25 +30,27 @@ namespace AJS.Banking.UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("There was an error loading the customers.xml: " + ex.Message);
-                // populates Collection with junk data if xml doesn't exist
+                // MessageBox.Show("There was an error loading the customers.xml: " + ex.Message);
+                // populates Collection with junk data if DB doesn't exist
                 customers.Populate();
             }
 
             // sets datasource of listbox to data from CustomerCollection and the datasource for gridviews to selected customer's DepositList and WithdrawalList
-            lstbxCustomers.DataSource = customers;
+            //lstbxCustomers.DataSource = customers;
 
+            /* OLD METHOD
             Customer? customer = lstbxCustomers.SelectedItem as Customer;
             dgvDeposits.DataSource = customer.DepositList;
             dgvDeposits.Columns["Amount"].DefaultCellStyle.Format = "c";
             dgvWithdrawals.DataSource = customer.WithdrawalList;
             dgvWithdrawals.Columns["Amount"].DefaultCellStyle.Format= "c";
+            */
 
         }
 
         private void lstbxCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // populates form data with data from selected customer
+            // populates deposits and withdrawl DGV data with data from transaction DB
             Customer? customer = lstbxCustomers.SelectedItem as Customer;
             if (customer != null) 
             {
@@ -86,7 +91,7 @@ namespace AJS.Banking.UI
 
             if (lstbxCustomers.SelectedItem == null)
             {
-                // creates new customer to be inserted into DB
+                // creates new customer to be inserted into customer DB
                 Customer? customer = new Customer();
                 customer.CustomerID = Convert.ToInt32(lblDisplayedID.Text);
                 customer.FirstName = txtFirstName.Text;
@@ -101,6 +106,7 @@ namespace AJS.Banking.UI
             }
             else
             {
+                // updates customer DB with changed customer data
                 Customer? customer = lstbxCustomers.SelectedItem as Customer;
                 customer.CustomerID = Convert.ToInt32(lblDisplayedID.Text);
                 customer.FirstName = txtFirstName.Text;
@@ -172,15 +178,16 @@ namespace AJS.Banking.UI
                     customer.LastName = txtLastName.Text;
                     customer.SSN = txtSSN.Text;
                     customer.BirthDate = Convert.ToDateTime(txtDOB.Text);
-                    customer.DeleteFromDB();
-                    lstbxCustomers.DataSource = null;
+                    customer.DeleteFromDB();                
                     customers.Clear();
+                    lstbxCustomers.DataSource = null;
                     customers.LoadFromDB();
                     lstbxCustomers.DataSource = customers;
+                    lblDisplayedID.Text = ""; txtFirstName.Text = ""; txtLastName.Text = ""; txtSSN.Text = ""; txtDOB.Text = ""; lblDisplayedAge.Text = "";
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("You just select a customer to delete them: ");
+                    MessageBox.Show("You must select a customer to delete them: ");
                 }
 
                 /* OLD METHOD
