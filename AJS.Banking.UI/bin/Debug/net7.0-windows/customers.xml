@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Customer>
+    <SSN>123456789</SSN>
+    <FirstName>Alex</FirstName>
+    <LastName>Stacey</LastName>
+    <BirthDate>1992-11-22T00:00:00</BirthDate>
+    <CustomerID>1</CustomerID>
+    <DepositList>
+      <Deposit>
+        <ID>1</ID>
+        <Amount>100</Amount>
+        <Date>2024-01-01T00:00:00</Date>
+      </Deposit>
+    </DepositList>
+    <WithdrawalList>
+      <Withdrawal>
+        <ID>2</ID>
+        <Amount>-50</Amount>
+        <Date>2024-01-02T00:00:00</Date>
+      </Withdrawal>
+    </WithdrawalList>
+  </Customer>
+  <Customer>
+    <SSN>1231723</SSN>
+    <FirstName>John</FirstName>
+    <LastName>John</LastName>
+    <BirthDate>2000-01-01T00:00:00</BirthDate>
+    <CustomerID>3</CustomerID>
+    <DepositList />
+    <WithdrawalList />
+  </Customer>
+  <Customer>
+    <SSN>1234</SSN>
+    <FirstName>Man</FirstName>
+    <LastName>Manmm</LastName>
+    <BirthDate>2003-02-23T00:00:00</BirthDate>
+    <CustomerID>4</CustomerID>
+    <DepositList />
+    <WithdrawalList />
+  </Customer>
+</ArrayOfCustomer>

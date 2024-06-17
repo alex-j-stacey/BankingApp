@@ -1,0 +1,12 @@
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\obj\Debug\net7.0\AJS.Banking.PL.csproj.AssemblyReference.cache
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\obj\Debug\net7.0\AJS.Banking.PL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\obj\Debug\net7.0\AJS.Banking.PL.AssemblyInfoInputs.cache
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\obj\Debug\net7.0\AJS.Banking.PL.AssemblyInfo.cs
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\obj\Debug\net7.0\AJS.Banking.PL.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\bin\Debug\net7.0\AJS.Banking.PL.deps.json
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\bin\Debug\net7.0\AJS.Banking.PL.dll
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\bin\Debug\net7.0\AJS.Banking.PL.pdb
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\obj\Debug\net7.0\AJS.Banking.PL.dll
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\obj\Debug\net7.0\refint\AJS.Banking.PL.dll
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\obj\Debug\net7.0\AJS.Banking.PL.pdb
+C:\Users\Alex\Desktop\FVTC\Semester 2\C# Intermediate\AJS.Banking\AJS.Banking.PL\obj\Debug\net7.0\ref\AJS.Banking.PL.dll
